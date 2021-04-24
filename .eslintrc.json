@@ -1,0 +1,36 @@
+{
+    "root": true,
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "extends": [
+        "react-app",
+        "react-app/jest",
+        "plugin:react/recommended",
+        "eslint:recommended",
+        "plugin:prettier/recommended"
+    ],
+    "plugins": ["prettier"],
+    "rules": {
+        "prettier/prettier": "warn",
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+        "no-unused-vars": "off"
+    },
+    "env": {
+        "browser": true,
+        "jest": true,
+        "node": true
+    },
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
+    }
+}
