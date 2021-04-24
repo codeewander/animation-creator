@@ -4,3 +4,10 @@ export const updateColor = (value, dispatch) => {
         color: value
     });
 };
+
+export const updateCurrentFrame = (value, dispatch) => {
+    dispatch({
+        type: "UPDATE_CURRENT_FRAME",
+        index: value
+    });
+};
