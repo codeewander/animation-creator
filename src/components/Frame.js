@@ -9,7 +9,7 @@ const Cell = styled.div`
     background: ${(props) => props.color};
 `;
 
-function Frame({ size, data }) {
+function Frame({ size, data = [] }) {
     return (
         <>
             {data.map((cell) => (

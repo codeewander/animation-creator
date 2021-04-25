@@ -9,11 +9,11 @@ const initialState = {
 
 export default function framesReducer(state = initialState, action) {
     const { currentFrame, copyCanvasArray } = state;
-    let cloneFrames = state.frames;
     const cloneCanvasArray = state.canvasArray;
     const emptyCanvas = JSON.parse(JSON.stringify(cloneCanvasArray)).map((pixel) => {
         return { ...pixel, color: "transparent" };
     });
+    let cloneFrames = state.frames;
     let targetFrame;
 
     switch (action.type) {
@@ -66,9 +66,7 @@ export default function framesReducer(state = initialState, action) {
                     frames: cloneFrames
                 };
             } else {
-                return {
-                    ...state
-                };
+                return state;
             }
 
         default:

@@ -7,16 +7,16 @@ const FrameWrapper = styled.div`
     display: grid;
     grid-template-columns: ${(props) => `repeat(8, ${props.size}px)`};
     grid-template-rows: ${(props) => `repeat(8, ${props.size}px)`};
-    margin: auto;
-    width: 80px;
+    width: 130px;
     outline: none;
-    height: 80px;
+    height: 130px;
     border: 4px solid rgba(255, 255, 255, 0.2);
     padding: 5px;
-    margin: 5px;
+    margin: auto;
     background: rgba(0, 0, 0, 0.4);
     box-shadow: ${(props) =>
         props.isTargetFrame ? "0px 0px 5px 5px #cdcdcd" : null};
+    grid-area: animation;
 `;
 
 function Animation() {
@@ -35,8 +35,8 @@ function Animation() {
         return () => clearTimeout(timer);
     });
     return (
-        <FrameWrapper size={10}>
-            <Frame size={10} data={frames[showFrame]}></Frame>
+        <FrameWrapper size={16}>
+            <Frame size={16} data={frames[showFrame]}></Frame>
         </FrameWrapper>
     );
 }

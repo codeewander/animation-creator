@@ -5,7 +5,8 @@ import { updateColor } from "../redux/actions";
 
 const Palette = styled.div`
     width: 75px;
-    margin: 20px;
+    margin: auto;
+    grid-area: palette;
 `;
 const ColorBox = styled.div`
     display: inline-block;
@@ -18,11 +19,11 @@ const ColorBox = styled.div`
     &:hover {
         border: 1px solid transparent;
         cursor: pointer;
-        outline: 2px dotted #cdcdcd;
+        outline: 2px dotted #ffc107;
     }
     &.active {
         border: 1px solid transparent;
-        box-shadow: 0px 0px 5px 5px #cdcdcd;
+        box-shadow: 0px 0px 5px 5px #ffc107;
     }
 `;
 

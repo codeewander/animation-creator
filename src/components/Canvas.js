@@ -8,6 +8,7 @@ const Container = styled.div`
     grid-template-rows: repeat(8, 32px);
     margin: auto;
     box-shadow: 0 0 6px 3px #666;
+    grid-area: canvas;
 `;
 const Pixel = styled.div`
     width: 30px;

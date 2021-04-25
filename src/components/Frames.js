@@ -6,9 +6,12 @@ import { updateCurrentFrame } from "../redux/actions";
 
 const Container = styled.div`
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
+    overflow-x: scroll;
     margin: 0 auto;
     justify-content: center;
+    grid-area: frames;
+    max-width: 700px;
 `;
 
 const FrameWrapper = styled.div`
@@ -18,14 +21,13 @@ const FrameWrapper = styled.div`
     cursor: pointer;
     margin: auto;
     border: 1px solid #cdcdcd;
-    padding: 5px;
     margin: 5px;
     box-shadow: ${(props) =>
-        props.isTargetFrame ? "0px 0px 5px 5px #cdcdcd" : null};
-    background: ${(props) => (props.isTargetFrame ? "rgba(0, 0, 0, 0.4)" : null)};
-    &:hover {
+        props.isTargetFrame ? "0px 0px 3px 3px #cdcdcd" : null};
+    background: ${(props) => (props.isTargetFrame ? "#cdcdcd" : null)};
+    /* &:hover {
         background: rgba(255, 255, 255, 0.2);
-    }
+    } */
 `;
 
 function Frames() {
