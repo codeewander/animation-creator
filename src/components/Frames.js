@@ -40,7 +40,7 @@ function Frames() {
                 return (
                     <FrameWrapper
                         key={index}
-                        onClick={() => updateCurrentFrame(index, dispatch)}
+                        onClick={() => dispatch(updateCurrentFrame(index))}
                         isTargetFrame={isTargetFrame}
                         size={6}
                     >

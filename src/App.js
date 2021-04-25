@@ -1,5 +1,4 @@
 import logo from "./logo.svg";
-import "./App.css";
 import styled from "styled-components";
 import ColorPalette from "./components/ColorPalette";
 import Canvas from "./components/Canvas";

@@ -30,18 +30,18 @@ function Controller() {
     const { frames } = useSelector((state) => state.frames);
     return (
         <ControllerWrapper>
-            <StyledButton onClick={() => addFrame(dispatch)}>Add</StyledButton>
+            <StyledButton onClick={() => dispatch(addFrame())}>Add</StyledButton>
             <StyledButton
                 onClick={() => {
                     if (frames.length > 1) {
-                        deleteFrame(dispatch);
+                        dispatch(deleteFrame());
                     }
                 }}
             >
                 Delete
             </StyledButton>
-            <StyledButton onClick={() => copyFrame(dispatch)}>Copy</StyledButton>
-            <StyledButton onClick={() => pasteFrame(dispatch)}>Paste</StyledButton>
+            <StyledButton onClick={() => dispatch(copyFrame())}>Copy</StyledButton>
+            <StyledButton onClick={() => dispatch(pasteFrame())}>Paste</StyledButton>
         </ControllerWrapper>
     );
 }

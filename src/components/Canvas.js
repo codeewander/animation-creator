@@ -7,7 +7,6 @@ const Container = styled.div`
     grid-template-columns: repeat(8, 32px);
     grid-template-rows: repeat(8, 32px);
     margin: auto;
-    box-shadow: 0 0 6px 3px #666;
     grid-area: canvas;
 `;
 const Pixel = styled.div`
@@ -35,7 +34,7 @@ function Canvas() {
                     x={pixel.x}
                     y={pixel.y}
                     onClick={() => {
-                        updatePixelColor(index, currentColor, dispatch);
+                        dispatch(updatePixelColor(index, currentColor));
                     }}
                 />
             ))}
