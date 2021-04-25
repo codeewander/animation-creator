@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
-
+import { updatePixelColor } from "../redux/actions";
 const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(8, 32px);
@@ -19,20 +19,23 @@ const Pixel = styled.div`
     &:hover {
         border: 1px solid #fff;
     }
-    /* transform: ${(props) => `translateX(${props.x * 16}px)`}; */
 `;
 
 function Canvas() {
     const { canvasArray } = useSelector((state) => state.frames);
-
+    const { currentColor } = useSelector((state) => state.palette);
+    const dispatch = useDispatch();
     return (
         <Container>
-            {canvasArray.map((pixel) => (
+            {canvasArray.map((pixel, index) => (
                 <Pixel
                     key={`${pixel.x}-${pixel.y}`}
                     color={pixel.color}
                     x={pixel.x}
                     y={pixel.y}
+                    onClick={() => {
+                        updatePixelColor(index, currentColor, dispatch);
+                    }}
                 />
             ))}
         </Container>

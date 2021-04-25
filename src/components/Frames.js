@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import Frame from "./Frame";
 import { updateCurrentFrame } from "../redux/actions";
+
 const Container = styled.div`
     display: flex;
     flex-wrap: wrap;

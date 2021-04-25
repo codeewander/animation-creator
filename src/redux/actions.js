@@ -11,3 +11,11 @@ export const updateCurrentFrame = (value, dispatch) => {
         index: value
     });
 };
+
+export const updatePixelColor = (index, color, dispatch) => {
+    dispatch({
+        type: "UPDATE_PIXEL_COLOR",
+        index: index,
+        currentColor: color
+    });
+};

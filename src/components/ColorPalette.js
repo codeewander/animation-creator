@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { updateColor } from "../redux/actions";
+
 const Palette = styled.div`
     width: 75px;
     margin: 20px;

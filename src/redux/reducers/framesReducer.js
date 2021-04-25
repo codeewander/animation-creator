@@ -7,13 +7,27 @@ const initialState = {
 };
 
 export default function framesReducer(state = initialState, action) {
+    const { currentFrame } = state;
     const cloneFrames = state.frames;
+    const cloneCanvasArray = state.canvasArray;
     switch (action.type) {
         case "UPDATE_CURRENT_FRAME":
             return {
                 ...state,
                 currentFrame: action.index,
                 canvasArray: cloneFrames[action.index]
+            };
+        case "UPDATE_PIXEL_COLOR":
+            if (cloneCanvasArray[action.index].color !== action.currentColor) {
+                cloneCanvasArray[action.index].color = action.currentColor;
+            } else {
+                cloneCanvasArray[action.index].color = "transparent";
+            }
+            cloneFrames[currentFrame] = cloneCanvasArray;
+            return {
+                ...state,
+                canvasArray: cloneCanvasArray,
+                frames: cloneFrames
             };
         default:
             return state;
