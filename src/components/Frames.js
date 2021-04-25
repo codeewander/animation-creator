@@ -38,9 +38,7 @@ function Frames() {
                 return (
                     <FrameWrapper
                         key={index}
-                        onClick={() => {
-                            updateCurrentFrame(index, dispatch);
-                        }}
+                        onClick={() => updateCurrentFrame(index, dispatch)}
                         isTargetFrame={isTargetFrame}
                         size={6}
                     >

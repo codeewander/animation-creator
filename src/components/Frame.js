@@ -21,7 +21,7 @@ function Frame({ size, data }) {
 
 Frame.propTypes = {
     size: PropTypes.number,
-    data: PropTypes.object,
+    data: PropTypes.array,
     isTargetFrame: PropTypes.bool,
     updateTargetFrame: PropTypes.func
 };

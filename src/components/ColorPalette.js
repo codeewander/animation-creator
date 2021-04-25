@@ -37,9 +37,7 @@ function ColorPalette() {
                     key={color}
                     color={color}
                     className={color === currentColor ? "active" : null}
-                    onClick={() => {
-                        updateColor(color, dispatch);
-                    }}
+                    onClick={() => updateColor(color, dispatch)}
                 ></ColorBox>
             ))}
         </Palette>
